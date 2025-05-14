@@ -44,6 +44,14 @@ url = "https://www.linkedin.com/in/saymon-nicho/"
 name = "github"
 url = "https://www.github.com/superflash41"
 
+# [[params.social]]
+# name = "gmail"
+# url = "mailto:saymon@example.com"
+
+# [[params.social]]
+# name = "x"
+# url = "https://twitter.com/saymon_nicho"
+
 # main menu pages
 [[params.menu]]
 name = "home"

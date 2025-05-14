@@ -15,7 +15,6 @@ The main goal of the field of AI since its inception has been to create human-li
 However, Chollet, argues that has not being possible given that there is no clear definition of intelligence,
 neither an standard way to measure it.
 
-In this context, he proposes a new formal definition of intelligence, based on *Algorithmic Information Theory* (AIT),
-and a set of guidelines for what a general AI benchmark should look like. Following this, he proposes 
+In this context, he proposes a new formal definition of intelligence, based on *Algorithmic Information Theory*, and a set of guidelines for what a general AI benchmark should look like. Following this, he proposes 
 the *Abstraction and Reasoning Corpus* (ARC), and explains how it can be used to evaluate artificial
 *fluid* intelligence.

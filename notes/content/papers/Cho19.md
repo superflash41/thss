@@ -1,7 +1,10 @@
 +++
 title = "Cho19 - On the Measure of Intelligence"
-date = '2025-05-14T01:37:53-04:00'
+date = '2025-05-14'
+toc = true
+math = true
 tags = ["Cho19", "intelligence", "ARC-AGI"]
+hideBackToTop = true
 pdf = "https://arxiv.org/pdf/1901.11150.pdf"
 draft = false
 +++
@@ -13,6 +16,6 @@ However, Chollet, argues that has not being possible given that there is no clea
 neither an standard way to measure it.
 
 In this context, he proposes a new formal definition of intelligence, based on *Algorithmic Information Theory* (AIT),
-and proposes a set of guidelines for what a general AI benchmark should look like. Following this, he proposes a new
-benchmark: the *Abstraction and Reasoning Corpus* (ARC), and explains how it can be used to evaluate artificial *fluid*
-intelligence.
+and a set of guidelines for what a general AI benchmark should look like. Following this, he proposes 
+the *Abstraction and Reasoning Corpus* (ARC), and explains how it can be used to evaluate artificial
+*fluid* intelligence.

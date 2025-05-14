@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Papers on Paper Notes</title>
-    <link>https://superflash41.github.io/thss/papers/</link>
-    <description>Recent content in Papers on Paper Notes</description>
+    <title>Papers on Thesis Research Notes</title>
+    <link>http://localhost:1313/thss/papers/</link>
+    <description>Recent content in Papers on Thesis Research Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 May 2025 01:37:53 -0400</lastBuildDate>
-    <atom:link href="https://superflash41.github.io/thss/papers/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/thss/papers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cho19 - On the Measure of Intelligence</title>
-      <link>https://superflash41.github.io/thss/papers/cho19/</link>
+      <link>http://localhost:1313/thss/papers/cho19/</link>
       <pubDate>Wed, 14 May 2025 01:37:53 -0400</pubDate>
-      <guid>https://superflash41.github.io/thss/papers/cho19/</guid>
-      <description>&lt;h2 class=&#34;heading&#34; id=&#34;overview&#34;&gt;&#xA;  Overview&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The main goal of the field of AI since its inception has been to create human-like artificial intelligence.&#xA;However, Chollet, argues that has not being possible given that there is no clear definition of intelligence,&#xA;neither an standard way to measure it.&lt;/p&gt;&#xA;&lt;p&gt;In this context, he proposes a new formal definition of intelligence, based on &lt;em&gt;Algorithmic Information Theory&lt;/em&gt; (AIT),&#xA;and proposes a set of guidelines for what a general AI benchmark should look like. Following this, he proposes a new&#xA;benchmark: the &lt;em&gt;Abstraction and Reasoning Corpus&lt;/em&gt; (ARC), and explains how it can be used to evaluate artificial &lt;em&gt;fluid&lt;/em&gt;&#xA;intelligence.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/thss/papers/cho19/</guid>
+      <description>&lt;h2 class=&#34;heading&#34; id=&#34;overview&#34;&gt;&#xA;  Overview&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The main goal of the field of AI since its inception has been to create human-like artificial intelligence.&#xA;However, Chollet, argues that has not being possible given that there is no clear definition of intelligence,&#xA;neither an standard way to measure it.&lt;/p&gt;&#xA;&lt;p&gt;In this context, he proposes a new formal definition of intelligence, based on &lt;em&gt;Algorithmic Information Theory&lt;/em&gt; (AIT),&#xA;and a set of guidelines for what a general AI benchmark should look like. Following this, he proposes&#xA;the &lt;em&gt;Abstraction and Reasoning Corpus&lt;/em&gt; (ARC), and explains how it can be used to evaluate artificial&#xA;&lt;em&gt;fluid&lt;/em&gt; intelligence.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Content Placeholder</title>
-      <link>https://superflash41.github.io/thss/papers/hello/</link>
+      <link>http://localhost:1313/thss/papers/hello/</link>
       <pubDate>Wed, 14 May 2025 01:37:53 -0400</pubDate>
-      <guid>https://superflash41.github.io/thss/papers/hello/</guid>
+      <guid>http://localhost:1313/thss/papers/hello/</guid>
       <description>&lt;p&gt;Lorem ipsum&lt;/p&gt;&#xA;&lt;p&gt;Lorem ipsum&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,5 @@
+baseURL = 'https://superflash41.github.io/thss/'
+languageCode = 'en-us'
+title = "Paper Notes"
+theme = "typo"
+pagerSize = 10

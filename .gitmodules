@@ -1,0 +1,3 @@
+[submodule "notes/themes/typo"]
+	path = notes/themes/typo
+	url = https://github.com/tomfran/typo

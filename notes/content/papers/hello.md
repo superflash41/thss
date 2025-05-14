@@ -1,9 +1,7 @@
 ---
 title: "Content Placeholder"
-build:
-  render: never
-  list: never
-  publishResources: false
+draft: false
+date: 2025-05-14T01:37:53-04:00
 ---
 
 Lorem ipsum

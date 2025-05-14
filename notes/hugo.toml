@@ -1,4 +1,5 @@
 baseURL = 'https://superflash41.github.io/thss/'
+publishDir = "../docs"
 languageCode = 'en-us'
 title = "Paper Notes"
 theme = "typo"

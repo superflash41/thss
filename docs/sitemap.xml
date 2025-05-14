@@ -2,11 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://superflash41.github.io/thss/categories/</loc>
-  </url><url>
     <loc>https://superflash41.github.io/thss/</loc>
+    <lastmod>2025-05-14T01:37:53-04:00</lastmod>
   </url><url>
     <loc>https://superflash41.github.io/thss/papers/</loc>
+    <lastmod>2025-05-14T01:37:53-04:00</lastmod>
+  </url><url>
+    <loc>https://superflash41.github.io/thss/categories/</loc>
   </url><url>
     <loc>https://superflash41.github.io/thss/tags/</loc>
   </url>

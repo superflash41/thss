@@ -4,3 +4,14 @@ languageCode = 'en-us'
 title = "Paper Notes"
 theme = "typo"
 pagerSize = 10
+
+[params]
+  description = "Summaries and insights from the papers I'm reading."
+  author = "Saymon Nicho"
+  dateFormat = "May 14, 2025"
+
+[menu]
+  [[menu.main]]
+    name = "All Papers"
+    url = "/papers/"
+    weight = 1

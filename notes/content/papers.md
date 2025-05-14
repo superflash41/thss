@@ -1,8 +1,10 @@
----
-title: "Index"
-draft: false
-date: 2025-05-14
----
++++
+title = "Index"
+date = "2025-05-14"
+math = true
+hideBackToTop = true
+draft = false
++++
 
 This is the list of papers I have read and taken notes on.
 

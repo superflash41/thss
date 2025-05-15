@@ -60,3 +60,7 @@ url = "/thss"
 [[params.menu]]
 name = "papers"
 url = "/thss/papers"
+
+[markup]
+[markup.highlight]
+style = 'catppuccin-frappe'

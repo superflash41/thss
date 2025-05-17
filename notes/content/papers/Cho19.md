@@ -13,13 +13,14 @@ draft = false
 
 ## Overview
 
-- The main goal of the AI field since its inception has been to create human-like artificial 
-intelligence. However, Chollet argues that this goal has not been possible to achieve given that there
-is no clear definition of intelligence, neither a standard way to measure it.
+The main goal of the AI field since its inception has been to create systems with human-like 
+intelligence. However, Chollet argues that this goal is unachievable given that there isn't a clear 
+definition of intelligence, nor a standard way to measure it.
 
-- In this context, he proposes a **formal definition of intelligence**, and a set of guidelines on **how
-a general AI benchmark should look like**. Following this, he introduces the *Abstraction and Reasoning
-Corpus* (ARC) as a tool to evaluate artificial *fluid* intelligence.
+In this context, he proposes a **formal definition of intelligence**, and a set of guidelines for
+**how a general AI benchmark should look**. To illustrate this, he introduces the [**Abstraction and 
+Reasoning Corpus (ARC)**](https://github.com/fchollet/ARC-AGI), as a tool for evaluating
+artificial *fluid* intelligence.
 
 ---
 
@@ -27,128 +28,128 @@ Corpus* (ARC) as a tool to evaluate artificial *fluid* intelligence.
 
 ### 1.1 Need for an actionable definition and measure of intelligence
 
-- We have been able to engineer systems that excel a specific tasks, but they still have limitations
-regarding their capacity to work with little data, or on repurposing themselves to deal with novel
-situations for which they were not trained.
+We have been able to engineer systems that excel at specific tasks, but they still have limitations:
+they struggle to work from little data and to adapt themselves to novel situations for which they
+were not trained.
 
-- The problem behind this is that we do not have a clear definition of what intelligence is, even when
-the field has already some 70 years of history. With no clear definition, there is no a goal to pursue.
-Even worse, there is no a established standard way to measure it.
+The root of the problem behind this is the **lack of a clear definition of intelligence**, despite the
+the 70 years of AI history. With no clear definition, there is no concrete goal to pursue. Even worse,
+**there is no established standard way to measure it**.
 
-- Then, it becomes obvious that we need two things:
-    - A clear definition of intelligence that is actionable, explanatory and **measurable**.
-    - A standard and reliable way to measure it.
+Then, it becomes obvious that we need two things:
+- A clear definition, actionable, explanatory and **measurable** definition of intelligence.
+- A standard and reliable way to measure it.
 
-- Some guilt resides on the AI community itself, as it has constantly been ignoring the efforts of
-establishing comprehensive and formal definitions and evaluation methods. To Chollet, this is a
-mistake. In this paper, he will point out the implicit assumptions on which the field has been working,
-and attempt to correct most of them.
+Chollet points out that the AI community has often neglected efforts to establish formal definitions
+and evaluation methods, which he sees as a mistake. That is why, he focuses on identifying
+the implicit assumptions on which the field has been working, and attempts to correct them.
 
 ### 1.2 Defining intelligence: two divergent visions
 
-- We must start then analyzing the current state of the field. In the context of AI research, Legg and
-Hutter (2007) summarized 70 definitions into: "Intelligence measures an agent's ability to achieve
-goals in a wide range of environments".
+We start then analyzing the field's current state. *Legg and Hutter (2007)* summarized 70 definitions
+of intelligence into:
+"*Intelligence measures an agent's ability to achieve goals in a wide range of environments*".
 
-- From this definition, we can extract two main components:
-    - *to achieve goals*: task-specific skill
-    - *in a wide range of environments*: capability of generalization and adaptation
+This definition lets us extract two key components:
+- *to achieve goals*: task-specific skill
+- *in a wide range of environments*: capability of generalization and adaptation
 
-- Implicit in the second one, is the fact that an agent needs to be able to learn to handle new tasks
-(skill acquisition) for it to truly achieve generality.
+Implicit in the second one, is the fact that an agent must be capable of learning how to handle new
+tasks (*skill acquisition*) for it to truly be general.
 
-- The two components of that definition, map themselves to the two main views of the human's mind
-nature: one view considers the mind as a static assembly of special-purpose mechanisms developed
-through evolution, and set to only learn what it was programmed to, and another view in which
+The two components of that definition map themselves to the main views of the human's mind
+nature: one sees the mind as a static assembly of special-purpose mechanisms developed
+through evolution and set to only learn what it was programmed to, and the other sees
 the mind is a blank slate (Tabula Rasa) capable of turning experience into knowledge and skills.
 
-- We must then start analyzing these perspectives before we can formulate our own definition.
+We must then analyze these perspectives before we can formulate our own definition.
 
 ![perspectives](/images/perspectives.png#small "Two perspectives")
 
-#### 1.2.1 Intelligence as a collection
+#### 1.2.1 Intelligence as a *collection of task-specific skills*
 
-- Originated in Darwin (1859), this view considers the mind as a collection of special-purpose
-adaptations developed by humans to solve specific problems they faced during evolution.
+Originated in Darwin (1859), this view considers the mind as a collection of special-purpose
+adaptations developed by humans to solve specific problems faced during evolution.
 
-- To the AI community, this view served as a base for the development of their definition of
-intelligence. They considered it as a set fo static program-like routines, which relied on logical operators for problem solving, and a database-like memory for storing knowledge.
+To the AI community, this view served as a basis for developing their definition of intelligence.
+They considered intelligence as a set of static, program-like routines, relying on logical operators
+for problem-solving, and a database-like memory for knowledge storage.
 
-- It became popular then in the field that the "problem of intelligence" would be solved if er could
-better encode human skills into formal rules, and knowledge into databases. This resulted on
-evaluation protocols basing themselves on performance on specific tasks.
+It then became popular in the field to believe that the "problem of intelligence" would be solved
+if we could better encode human skills into formal rules and knowledge into databases. This resulted
+in evaluation protocols based on performance in specific tasks.
 
-- As pointed out by Hernánder-Orallo (2017), this view resulted into a paradox: "the AI field
-became successful in developing artificial system that could perform very well on specific tasks
-without featuring intelligence at all". This trend is still present today.
+As pointed out by *Hernández-Orallo (2017)*, this view resulted in a paradox: "*The AI field
+became successful in developing artificial systems that could perform very well on specific tasks
+without featuring intelligence at all*". This trend persists today.
 
-#### 1.2.2 Intelligence as a general learning ability
+#### 1.2.2 Intelligence as a *general learning ability*
 
-- The other view of intelligence is based on the idea that intelligence lies into the ability to
-acquire new skills through learning. This ability could then be applied to a wide range of unseen
-problems, or even any problem at all.
+The alternative view is based on the idea that intelligence lies in the ability to acquire new
+skills through learning. Such and ability could then apply to a wide range of unseen—or even any—
+problems.
 
-- This view of intelligence is aligned with the cognitive sciences idea of the mind as a blank slate,
-a flexible, adaptable, highly general process that could turn experience into behavior, knowledge and
+This perspective aligns with the cognitive science view of the mind as a blank slate:
+a flexible, adaptable, highly general process that transforms experience into behavior, knowledge and
 skills.
 
-- Although this idea of generality through learning was at the core of AI at the birth of the field,
-it wasn't until the 80s that it started to be taken seriously with the revolution of deep learning.
-During this peak, was that many researchers started to conceptualize the mind as a "randomly
-initialized neural network" that starts blank and derives skills from "training data". We see the
-world through the lens of the tools we are most familiar with.
+Although this idea of generality through learning was at the core of AI at the birth of the field,
+it wasn't until the 1980s, with the revolution in deep learning, that it gained serious attention.
+It was during this peak that many researchers began to conceptualize the mind as a "*randomly
+initialized neural network*" that starts blank and derives skills from training data. As Chollet 
+states, we see the world through the lens of the tools we are most familiar with.
 
-- Today, it has become obvious that both perspectives, either a collection of special-purpose
-programs or a general-purpose Tabula Rasa, are incorrect.
+Today, it has become obvious that both perspectives—whether a collection of special-purpose
+programs or a general-purpose Tabula Rasa—are incorrect.
 
 ### 1.3 AI evaluation: from measuring skills to measuring broad abilities
 
-- Not only the definition is concerning, but also the evaluation methods. In both of the seen
-perspectives, there has not been established a single formal way to do skill-based evaluation.
+It’s not only the lack of a clear definition that is concerning, but also the methods of evaluation.
+Neither of the two perspectives discussed so far has established a formal approach for comprehensive
+evaluation.
 
 #### 1.3.1 Skill-based, narrow AI evaluation
 
-- Historically, to evaluate systems we have:
-    - Human review: Human judges observe the input-output pairs and score them. Howver, this method
-    is expensive, impossible to automate or scale, and is subjective.
-    - White-box analysis: The system is analyzed from the inside, and its useful to evaluate if
-    a it is working as intended.
-    - Peer confrontation: Two systems compete agains each other to find the best one.
-    - Benchmarking: Having a system produce outputs for which "test sets" have been defined,
-    and desired outputs are known.
+Historically, system evaluation has included:
+- *Human review*: Human judges observe input-output pairs and score them. However, this method
+is expensive, impossible to automate or scale, and subjective.
+- *White-box analysis*: Systems are analyzed internally. This approach is useful for verifying if
+they operate as intended.
+- *Peer confrontation*: Systems compete against each other to find the best one.
+- *Benchmarking*: Systems produce outputs for which *test sets* have been defined,
+and desired outputs are known.
 
-- In particular, benchmarks are considered to be the best tools for evaluation given that they are
-reproducible, fair, scalable, easy to set up (most times), and flexible enough to be applicable to
-a wide range of possible tasks. This is why is the preferred method in the field.
+In particular, **benchmarks** are considered the best tools for evaluation because they are 
+reproducible, fair, scalable, relatively easy to set up, and flexible enough to be applicable to
+a wide range of tasks.
 
-- However, benchmarks include a little problem. There exists the posibility that the result systems
-focus on exceling at a particular metric or task, making the solution overly optimized for that
-task, and not generalizable to others, which would not align with the sort of human intelligence that
-the field of AI is set to build.
+However, benchmarks carry a hidden pitfall: they might encourage systems to overly optimize for a
+specific metric or task, limiting generalization to other tasks—thus not aligning with human-like 
+intelligence.
 
-- As humans, being very good at a specific task is considered to be a prove of intelligence, because
-it demonstrates the implicit ability we must have had in first place to learn how to do that task.
-Furthermore, it suggests that we could learn to extend this ability to other tasks or domains.
+For *humans*, excelling at a specific task is considered proof of intelligence because
+it demonstrates the implicit general ability we must have had in the first place to learn that task.
+Furthermore, it suggests we could extend this ability to other tasks or domains.
 
-- On machines this is not the case. Machines being excelent at specific tasks does not prove them
-to be intelligent. And this results in the same paradox as before: "artificial systems can solve
-super hard problems without being intelligent at all".
+For *machines* this is not the case. Machines excelling at specific tasks does not prove they
+are intelligent. And this leads back to the earlier paradox: "Artificial systems can solve
+complex problems without being intelligent at all".
 
-- This confusion can arise from the fact that in humans the process of intelligence (the ability to
-learn many skills) and the artifact produced by this process (the good results on a particular task)
-are intertwined. In other words, for humans being good at one task is enough to prove intelligence,
+This confusion arises because, in humans, the intelligence process (the ability to learn many
+skills) and the artifact produced by this process (good results on particular tasks) 
+are intertwined. In other words, for humans being good at one task is enough proof of intelligence,
 while for machines it is just that: being good at one task.
 
 ![just-that](/images/just-that.png#small "Just that")
 
-- The problem then with the AI field has not been that AI systems have been measured by their
-performance on specific tasks. The problem has been that this results have been considered as a
-prove of success in a field whose main goal was to develop systems that can show autonomy and dynamiclly need to adapt to changes like humans do.
+The problem then with the AI field has not been that AI systems have been measured by their
+performance on specific tasks. Rather, the issue has been interpreting these results as proof of
+of success towards developing systems capable of autonomy and dynamic adaptability like humans.
 
-- We must then correct the way this success is measured. And for that we must focus on the
-particular aspects current problems in the field exhibit: the need of flexibility and robustness.
-Moreover, it has become evident that we need to move beyond skill-based evaluation, to a more
-profound eavaluation of a system's generalization capability.
+We must therefore correct how success is measured, focusing specifically on aspects that
+current problems in the field exhibit: the need of *flexibility* and *robustness*.
+Moreover, it has become clear that we need to move beyond skill-based evaluation, to a more
+profound assessment of systems' generalization capabilities.
 
 #### 1.3.2 The spectrum of generalization: robustness, flexibility and generality
 
@@ -158,13 +159,43 @@ profound eavaluation of a system's generalization capability.
 > 
 > \- René Descartes, 1637
 
-- Chollet takes generalization as the ability of a system to handle situations (or tasks) that
-differ from previously encountered situations.
+Chollet *informally* defines generalization as the ability of an AI system to handle situations or
+tasks that differ from previously encountered ones. To understand what *previously encountered 
+situations* means, we must distinguish between two types of generalization:
+- *System-centric generalization*: Ability of a learning system to handle situations it has
+never seen before. If an engineer develops a machine learning algorithm and fits it on
+a training set of N samples, its generalization capability would refer to the classification
+error over images not included in the training set.
+- *Developer-aware generalization*: Ability of a system—either learning or static—to handle
+situations neither the system nor its developer has seen before. Continuing the previous example,
+this would mean evaluating algorithm performance on data completely outside its training and 
+development contexts.
 
-- To better understand what *previously encountered situations* means, we must distinguish between
-two types of generalization.
+Furthermore, degrees of generalization can be qualitatively defined as:
+- *Absence of generalization*: Generalization requires uncertainty—information unknown to the system
+or developer. Deterministic systems (e.g., chess engines, array sorters) involve no uncertainty,
+thus no generalization.
+- *Local generalization* or **robustness**: Ability of a system to handle new data points from a
+known distribution for a single task or set of tasks, given a sufficiently dense sampling
+of examples. Simplified: *adaptation to **known unknowns within a single task** or well-scoped
+set of tasks*. This form of generalization has dominated the field since the 50s.
+- *Broad generalization* or **flexibility**: Ability of a system to handle a broad range of tasks
+and environments without further human intervention (developer-aware generalization). Simplified:
+*adaptation to **unknown unknowns across diverse related tasks***. Even the most advanced AI
+systems today do not belong to this category.
+- *Extreme generalization* or **generality**: Ability of open-ended systems to handle entirely new
+    tasks that only share abstract commonalities with previously encountered situations, applicable
+    to any task and domain within a wide scope. Simplified: *adaptation to **unknown unknowns across
+    an unknown range of tasks** and domains*.
+        
+Chollet refers, in particular, to "*human-centric extreme generalization*" as *generality*, because
+**humans are the only known systems** that can **display both system-centric** (quick adaptability to 
+novel situations from little experience) **and developer-aware generalization** (ability of
+contemporary humans to handle situations that previous ones in history have never encountered).
 
-
+One additional category could be noted: *universal generalization* or **universality**, which extends
+the notion of *generality* beyond the scope of humans. However, this lies outside the goals of the AI
+field, and Chollet considers it irrelevant. 
 
 
 ---

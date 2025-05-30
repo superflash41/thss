@@ -64,3 +64,6 @@ url = "/thss/papers"
 [markup]
 [markup.highlight]
 style = 'catppuccin-frappe'
+
+[params.breadcrumbs]
+enabled = false

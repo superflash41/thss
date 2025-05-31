@@ -311,16 +311,19 @@ In this paper, he proposes a formal definition of intelligence, and a set of gui
 </h4>
 <p>Historically, system evaluation has included:</p>
 <ul>
-<li><em>Human review</em>: Human judges observe input-output pairs and score them. However, this method is expensive, impossible to automate or scale, and subjective.</li>
-<li><em>White-box analysis</em>: Systems are analyzed internally. This approach is useful for verifying if they operate as intended.</li>
-<li><em>Peer confrontation</em>: Systems compete against each other to find the best one.</li>
-<li><em>Benchmarking</em>: Systems produce outputs for which <em>test sets</em> have been defined, and desired outputs are known.</li>
+<li><em>Human review</em>: Human judges <strong>observe input-output</strong> pairs and <strong>score them</strong>. This method is <strong>expensive</strong>, impossible to automate or scale, and <strong>subjective</strong>.</li>
+<li><em>White-box analysis</em>: Systems are <strong>analyzed internally</strong> to check if they operate as intended.</li>
+<li><em>Peer confrontation</em>: Systems <strong>compete against each other</strong> to find the best one.</li>
+<li><em>Benchmarking</em>: Systems produce <strong>outputs for which <em>test sets</em> have been defined</strong>, and desired outputs are known.</li>
 </ul>
-<p>In particular, <strong>benchmarks</strong> are considered the best tools for evaluation because they are reproducible, fair, scalable, relatively easy to set up, and flexible enough to be applicable to a wide range of tasks.</p>
-<p>However, benchmarks carry a hidden pitfall: they might encourage systems to overly optimize for a specific metric or task, limiting generalization to other tasks—thus not aligning with human-like intelligence.</p>
-<p>For <em>humans</em>, excelling at a specific task is considered proof of intelligence because it demonstrates the implicit general ability we must have had in the first place to learn that task. Furthermore, it suggests we could extend this ability to other tasks or domains.</p>
-<p>For <em>machines</em> this is not the case. Machines excelling at specific tasks does not prove they are intelligent. And this leads back to the earlier paradox: &ldquo;Artificial systems can solve complex problems without being intelligent at all&rdquo;.</p>
-<p>This confusion arises because, in humans, the intelligence process (the ability to learn many skills) and the artifact produced by this process (good results on particular tasks) are intertwined. In other words, for humans being good at one task is enough proof of intelligence, while for machines it is just that: being good at one task.</p>
+<p><strong>Benchmarks</strong> are considered the best tools for evaluation because they are <strong>reproducible</strong>, <strong>fair</strong>, <strong>scalable</strong>, relatively easy to set up, and <strong>flexible</strong> enough to be applicable to a wide range of tasks.</p>
+<p>However, they carry a <strong>hidden pitfall</strong>: they may encourage systems to overly optimize for a specific metric or task, <strong>limiting generalization</strong> to others. In AI, the focus on achieving task-specific performance while placing no conditions on <em>how the system achieves it</em> has led to the development of systems that <strong>lack the sort of human-like intelligence</strong> that the field aspires to.</p>
+<p>This was interpreted by McCorduck as an <em>AI effect</em>, and noted by Reed as:</p>
+<blockquote>
+<p>&ldquo;When we know how a machine does something &lsquo;intelligent&rsquo;, it ceases to be regarded as intelligent. If I beat the world&rsquo;s chess champion, I&rsquo;d be regarded as highly bright.&rdquo;</p></blockquote>
+<p>This (wrong) interpretation arises from overly anthropocentric assumptions about intelligence.</p>
+<p>For <em>humans</em>, excelling at a specific task is considered proof of intelligence because it demonstrates the <strong>implicit general ability one must have had in the first place to learn that task</strong>. Furthermore, it suggests this ability could be extended to other tasks or domains.</p>
+<p>For <em>machines</em> <strong>this is not the case</strong>. So the problem comes from confusing the <strong>intelligence process</strong> (the ability to learn many skills) and the <strong>artifact produced</strong> by this process (good results on particular tasks using those skills), given that in humans they are <strong>intertwined</strong>. For machines being good at one task is just that: being good at one task.</p>
 <p>
 
 
@@ -349,8 +352,8 @@ In this paper, he proposes a formal definition of intelligence, and a set of gui
     
 </figure>
 </p>
-<p>The problem then with the AI field has not been that AI systems have been measured by their performance on specific tasks. Rather, the issue has been interpreting these results as proof of success towards developing systems capable of autonomy and dynamic adaptability like humans.</p>
-<p>We must therefore correct how success is measured, focusing specifically on aspects that current problems in the field exhibit: the need of <em>flexibility</em> and <em>robustness</em>. Moreover, it has become clear that we need to move beyond skill-based evaluation, to a more profound assessment of systems&rsquo; generalization capabilities.</p>
+<p>The <strong>problem</strong> then has not been measuring AI systems by their performance on specific tasks. Rather, the issue has been <strong>interpreting these results as proof of success</strong> towards developing adaptable and autonomous human-like systems.</p>
+<p>Chollet decides to <strong>correct <em>how</em> this success is measured</strong>, focusing on aspects the current field problems exhibit: the need of <em>flexibility</em> and <em>robustness</em>. Moreover, it becomes clear to him that we need to <strong>move beyond skill-based evaluation</strong>, to a more profound assessment of systems&rsquo; generalization capabilities.</p>
 <h4 class="heading" id="132-the-spectrum-of-generalization-robustness-flexibility-and-generality">
   1.3.2 The spectrum of generalization: robustness, flexibility and generality
   <a class="anchor" href="#132-the-spectrum-of-generalization-robustness-flexibility-and-generality">#</a>
@@ -358,18 +361,43 @@ In this paper, he proposes a formal definition of intelligence, and a set of gui
 <blockquote>
 <p>&ldquo;&hellip; bien qu&rsquo;elles fissent plusieurs choses aussi bien, ou peut-être mieux que nous, elles manqueraient infailliblement en quelques autres, par où on découvrirait qu&rsquo;elles n&rsquo;agiraient pas par connaissance, mais seulement par la disposition de leurs organes.&rdquo;</p>
 <p>- René Descartes, 1637</p></blockquote>
-<p>Chollet <em>informally</em> defines generalization as the ability of an AI system to handle situations or tasks that differ from previously encountered ones. To understand what <em>previously encountered  situations</em> means, we must distinguish between two types of generalization:</p>
+<p>Chollet <em>informally</em> defines <strong>generalization</strong> as the <strong>ability of an AI system to handle situations or tasks that differ from previously encountered ones</strong>. These <em>previously encountered situations</em> relate themselves with two types of generalization:</p>
 <ul>
-<li><em>System-centric generalization</em>: Ability of a learning system to handle situations it has never seen before. If an engineer develops a machine learning algorithm and fits it on a training set of N samples, its generalization capability would refer to the classification error over images not included in the training set.</li>
-<li><em>Developer-aware generalization</em>: Ability of a system—either learning or static—to handle situations neither the system nor its developer has seen before. Continuing the previous example, this would mean evaluating algorithm performance on data completely outside its training and development contexts.</li>
+<li><em>System-centric generalization</em>: Ability of a learning system to handle situations <strong>it</strong> has never seen before. If an engineer fits a machine learning algorithm on a training set of $N$ samples, its generalization capability would refer to the classification error over images not included in the training set, but that are similar to those in it.</li>
+<li><em>Developer-aware generalization</em>: Ability of a (learning or static) system to handle situations <strong>neither the system nor its developer</strong> has seen before. On the previous example, this would mean evaluating the algorithm on data completely outside its training and development sets.</li>
 </ul>
-<p>Furthermore, degrees of generalization can be qualitatively defined as:</p>
+<p>Additionally, he defines degrees of generalization:</p>
 <ul>
-<li><em>Absence of generalization</em>: Generalization requires uncertainty—information unknown to the system or developer. Deterministic systems (e.g., chess engines, array sorters) involve no uncertainty, thus no generalization.</li>
-<li><em>Local generalization</em> or <strong>robustness</strong>: Ability of a system to handle new data points from a known distribution for a single task or set of tasks, given a sufficiently dense sampling of examples. Simplified: <em>adaptation to <strong>known unknowns within a single task</strong> or well-scoped set of tasks</em>. This form of generalization has dominated the field since the 50s.</li>
-<li><em>Broad generalization</em> or <strong>flexibility</strong>: Ability of a system to handle a broad range of tasks and environments without further human intervention (developer-aware generalization). Simplified: <em>adaptation to <strong>unknown unknowns across diverse related tasks</strong></em>. Even the most advanced AI systems today do not belong to this category.</li>
-<li><em>Extreme generalization</em> or <strong>generality</strong>: Ability of open-ended systems to handle entirely new tasks that only share abstract commonalities with previously encountered situations, applicable to any task and domain within a wide scope. Simplified: <em>adaptation to <strong>unknown unknowns across an unknown range of tasks</strong> and domains</em>.</li>
+<li><em>Absence of generalization</em>: Generalization requires uncertainty—information unknown to the system or developer. Deterministic systems (e.g., compilers, array sorters, deterministic mathematical functions) involve <strong>no uncertainty</strong>, thus <strong>no generalization</strong>.</li>
+<li><em>Local generalization</em> or <strong>robustness</strong>: Ability of a system to handle new data points from <strong>a known distribution</strong> for a single task or well-scoped set of tasks, given a sufficiently dense sampling of examples. Simplified: <em>adaptation to <strong>known unknowns within a single task</strong> or well-scoped set of tasks</em>. This form of generalization has dominated the field since the 50s.</li>
+<li><em>Broad generalization</em> or <strong>flexibility</strong>: Ability of a system to handle a broad range of tasks and environments <strong>without further human intervention</strong> (developer-aware generalization). Simplified: <em>adaptation to <strong>unknown unknowns across diverse related tasks</strong></em>. Even the most advanced AI systems from today do not belong to this category.</li>
+<li><em>Extreme generalization</em> or <strong>generality</strong>: Ability of open-ended systems to handle entirely new <strong>tasks that only share abstract commonalities</strong> with previously encountered situations, applicable to any task and domain within a wide scope. Simplified: <em>adaptation to <strong>unknown unknowns across an unknown range of tasks</strong> and domains</em>.</li>
 </ul>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div class="img-container" style="--w: 5634; --h: 7043;">
+        <img loading="lazy" alt="generalization" src="/thss/images/generalization.jpg" width="5634" height="7043">
+    </div>
+
+    
+    <div class="caption-container">
+        <figcaption> The spectrum of generalization </figcaption>
+    </div>
+    
+</figure>
+</p>
 <p>Chollet refers, in particular, to &ldquo;<em>human-centric extreme generalization</em>&rdquo; as <em>generality</em>, because <strong>humans are the only known systems</strong> that can <strong>display both system-centric</strong> (quick adaptability to  novel situations from little experience) <strong>and developer-aware generalization</strong> (ability of contemporary humans to handle situations that previous ones in history have never encountered).</p>
 <p>One additional category could be noted: <em>universal generalization</em> or <strong>universality</strong>, which extends the notion of <em>generality</em> beyond the scope of humans. However, this lies outside the goals of the AI field, and Chollet considers it irrelevant.</p>
 <hr>

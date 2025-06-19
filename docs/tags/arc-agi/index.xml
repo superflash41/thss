@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ARC-AGI on Thesis Research Notes</title>
-    <link>http://localhost:1313/thss/tags/arc-agi/</link>
+    <link>https://superflash41.github.io/thss/tags/arc-agi/</link>
     <description>Recent content in ARC-AGI on Thesis Research Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/thss/tags/arc-agi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://superflash41.github.io/thss/tags/arc-agi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LiW24 - Combining Induction and Transduction for Abstract Reasoning</title>
+      <link>https://superflash41.github.io/thss/papers/liw24/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://superflash41.github.io/thss/papers/liw24/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;overview&#34;&gt;&#xA;  Overview&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This paper explores a novel approach to abstract reasoning in the Abstraction and Reasoning Corpus (ARC) by &lt;strong&gt;combining inductive and transductive paradigms&lt;/strong&gt;. The authors introduce a pipeline that leverages both paradigms using large language models (LLMs) and a large-scale synthetic data generation process.&lt;/p&gt;&#xA;&lt;p&gt;The key contributions include:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A method for &lt;strong&gt;generating synthetic ARC-style problems&lt;/strong&gt; from a small set of human-written seed programs.&lt;/li&gt;&#xA;&lt;li&gt;A dual approach that combines induction (&lt;strong&gt;program synthesis&lt;/strong&gt;) and transduction (direct prediction) to solve ARC tasks.&lt;/li&gt;&#xA;&lt;li&gt;A resulting performance of &lt;strong&gt;56.75%&lt;/strong&gt; on the &lt;strong&gt;validation set&lt;/strong&gt;, and a spot on the top of the ARC Prize leaderboard.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;1-core-idea&#34;&gt;&#xA;  1 Core Idea&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#1-core-idea&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Induction involves inferring an explicit &lt;strong&gt;latent function&lt;/strong&gt; (represented as &lt;em&gt;Python&lt;/em&gt; code) that explains the observed examples. This involves &lt;strong&gt;synthesizing programs&lt;/strong&gt; that fit the training examples and then using them to make predictions on new inputs.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Cho19 - On the Measure of Intelligence</title>
-      <link>http://localhost:1313/thss/papers/cho19/</link>
+      <link>https://superflash41.github.io/thss/papers/cho19/</link>
       <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/thss/papers/cho19/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;overview&#34;&gt;&#xA;  Overview&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The main goal of the AI field since inception has been to create systems with human-like intelligence. However, Chollet argues that this goal is unachievable given bd there hasn&amp;rsquo;t been a clear definition of intelligence, nor a standard way to measure it.&lt;/p&gt;&#xA;&lt;p&gt;In this paper, he proposes a &lt;strong&gt;formal definition of intelligence&lt;/strong&gt;, and a set of guidelines for &lt;strong&gt;how a general AI benchmark should look&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;He introduces the &lt;a href=&#34;https://github.com/fchollet/ARC-AGI&#34;&gt;&lt;strong&gt;Abstraction and Reasoning Corpus (ARC)&lt;/strong&gt;&lt;/a&gt;, as a tool for evaluating artificial &lt;em&gt;fluid&lt;/em&gt; intelligence.&lt;/p&gt;</description>
+      <guid>https://superflash41.github.io/thss/papers/cho19/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;overview&#34;&gt;&#xA;  Overview&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The main goal of the AI field since inception has been to create systems with human-like intelligence.  Chollet argues this goal is unachievable because there hasn&amp;rsquo;t been a clear definition of intelligence, nor a standard way to measure it.&lt;/p&gt;&#xA;&lt;p&gt;In this paper, he proposes a &lt;strong&gt;formal definition of intelligence&lt;/strong&gt;, and a set of guidelines for how a &lt;strong&gt;general AI benchmark&lt;/strong&gt; should look like. He introduces the &lt;em&gt;&lt;a href=&#34;https://github.com/fchollet/ARC-AGI&#34;&gt;Abstraction and Reasoning Corpus&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

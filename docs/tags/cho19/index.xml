@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cho19 on Thesis Research Notes</title>
-    <link>http://localhost:1313/thss/tags/cho19/</link>
+    <link>https://superflash41.github.io/thss/tags/cho19/</link>
     <description>Recent content in Cho19 on Thesis Research Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/thss/tags/cho19/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://superflash41.github.io/thss/tags/cho19/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cho19 - On the Measure of Intelligence</title>
-      <link>http://localhost:1313/thss/papers/cho19/</link>
+      <link>https://superflash41.github.io/thss/papers/cho19/</link>
       <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/thss/papers/cho19/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;overview&#34;&gt;&#xA;  Overview&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The main goal of the AI field since inception has been to create systems with human-like intelligence. However, Chollet argues that this goal is unachievable given bd there hasn&amp;rsquo;t been a clear definition of intelligence, nor a standard way to measure it.&lt;/p&gt;&#xA;&lt;p&gt;In this paper, he proposes a &lt;strong&gt;formal definition of intelligence&lt;/strong&gt;, and a set of guidelines for &lt;strong&gt;how a general AI benchmark should look&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;He introduces the &lt;a href=&#34;https://github.com/fchollet/ARC-AGI&#34;&gt;&lt;strong&gt;Abstraction and Reasoning Corpus (ARC)&lt;/strong&gt;&lt;/a&gt;, as a tool for evaluating artificial &lt;em&gt;fluid&lt;/em&gt; intelligence.&lt;/p&gt;</description>
+      <guid>https://superflash41.github.io/thss/papers/cho19/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;overview&#34;&gt;&#xA;  Overview&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The main goal of the AI field since inception has been to create systems with human-like intelligence.  Chollet argues this goal is unachievable because there hasn&amp;rsquo;t been a clear definition of intelligence, nor a standard way to measure it.&lt;/p&gt;&#xA;&lt;p&gt;In this paper, he proposes a &lt;strong&gt;formal definition of intelligence&lt;/strong&gt;, and a set of guidelines for how a &lt;strong&gt;general AI benchmark&lt;/strong&gt; should look like. He introduces the &lt;em&gt;&lt;a href=&#34;https://github.com/fchollet/ARC-AGI&#34;&gt;Abstraction and Reasoning Corpus&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

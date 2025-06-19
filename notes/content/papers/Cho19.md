@@ -105,7 +105,7 @@ This was interpreted by McCorduck as an *AI effect*, and noted by Reed as:
 
 This (wrong) interpretation arises from overly anthropocentric assumptions about intelligence. 
 
-For *humans*, excelling at a specific task is considered proof of intelligence because it demonstrates the **implicit general ability one must have had in the first place to learn that task**. Furthermore, it suggests this ability could be extended to other tasks or domains.
+For *humans*, excelling at one specific task is considered proof of intelligence because it demonstrates the **implicit general ability one must have had in the first place to learn that task**. Furthermore, it suggests this ability could be extended to other tasks or domains.
 
 For *machines* **this is not the case**. So the problem comes from confusing the **intelligence process** (the ability to learn many skills) and the **artifact produced** by this process (good results on particular tasks using those skills), given that in humans they are **intertwined**. For machines being good at one task is just that: being good at one task.
 

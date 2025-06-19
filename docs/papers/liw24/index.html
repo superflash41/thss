@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<link rel="icon" type="image/ico" href="https:/superflash41.github.io/thss/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https:/superflash41.github.io/thss/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https:/superflash41.github.io/thss/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https:/superflash41.github.io/thss/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https:/superflash41.github.io/thss/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    LiW24 - Combining Induction and Transduction for Abstract Reasoning | Thesis Research Notes
+    
+</title>
+
+<link rel="canonical" href="https://superflash41.github.io/thss/papers/liw24/"/>
+
+<meta property="og:url" content="https://superflash41.github.io/thss/papers/liw24/">
+  <meta property="og:site_name" content="Thesis Research Notes">
+  <meta property="og:title" content="LiW24 - Combining Induction and Transduction for Abstract Reasoning">
+  <meta property="og:description" content="Overview # This paper explores a novel approach to abstract reasoning in the Abstraction and Reasoning Corpus (ARC) by combining inductive and transductive paradigms. The authors introduce a pipeline that leverages both paradigms using large language models (LLMs) and a large-scale synthetic data generation process.
+The key contributions include:
+A method for generating synthetic ARC-style problems from a small set of human-written seed programs. A dual approach that combines induction (program synthesis) and transduction (direct prediction) to solve ARC tasks. A resulting performance of 56.75% on the validation set, and a spot on the top of the ARC Prize leaderboard. 1 Core Idea # Induction involves inferring an explicit latent function (represented as Python code) that explains the observed examples. This involves synthesizing programs that fit the training examples and then using them to make predictions on new inputs.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="papers">
+    <meta property="article:published_time" content="2025-06-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-01T00:00:00+00:00">
+    <meta property="article:tag" content="LiW24">
+    <meta property="article:tag" content="Intelligence">
+    <meta property="article:tag" content="ARC-AGI">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/thss/assets/combined.min.51e60333317bc21d435cd8b1e083282384b6283d25b128fe0b2e2dba06f30264.css" media="all">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="light">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    
+
+    <div class="header-menu">
+        
+
+        
+        
+
+        <p class="small ">
+            <a href="/thss" >
+                /home
+            </a>
+        </p>
+        
+
+        <p class="small ">
+            <a href="/thss/papers" >
+                /papers
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div >
+  <article>
+    <header class="single-intro-container">
+        
+        <h1 class="single-title">LiW24 - Combining Induction and Transduction for Abstract Reasoning</h1>
+    
+        <p class="single-readtime">
+          <time datetime="2025-06-01T00:00:00&#43;00:00">June 1, 2025</time>
+        </p>
+    </header>
+      <aside class="toc">
+        <p><strong>Table of contents</strong></p>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#1-core-idea">1 Core Idea</a></li>
+    <li><a href="#2-synthetic-data-generation-pipeline">2 Synthetic Data Generation Pipeline</a></li>
+    <li><a href="#3-neural-models-and-training">3 Neural Models and Training</a></li>
+    <li><a href="#4-evaluation-and-results">4 Evaluation and Results</a></li>
+    <li><a href="#5-broader-implications-and-relation-to-agi">5 Broader Implications and Relation to AGI</a></li>
+    <li><a href="#6-implementation-details-and-scaling">6 Implementation Details and Scaling</a></li>
+    <li><a href="#7-conclusion">7 Conclusion</a></li>
+  </ul>
+</nav>
+      </aside>
+    
+    <div class="single-content">
+      <hr>
+<h2 class="heading" id="overview">
+  Overview
+  <a class="anchor" href="#overview">#</a>
+</h2>
+<p>This paper explores a novel approach to abstract reasoning in the Abstraction and Reasoning Corpus (ARC) by <strong>combining inductive and transductive paradigms</strong>. The authors introduce a pipeline that leverages both paradigms using large language models (LLMs) and a large-scale synthetic data generation process.</p>
+<p>The key contributions include:</p>
+<ul>
+<li>A method for <strong>generating synthetic ARC-style problems</strong> from a small set of human-written seed programs.</li>
+<li>A dual approach that combines induction (<strong>program synthesis</strong>) and transduction (direct prediction) to solve ARC tasks.</li>
+<li>A resulting performance of <strong>56.75%</strong> on the <strong>validation set</strong>, and a spot on the top of the ARC Prize leaderboard.</li>
+</ul>
+<hr>
+<h2 class="heading" id="1-core-idea">
+  1 Core Idea
+  <a class="anchor" href="#1-core-idea">#</a>
+</h2>
+<p>Induction involves inferring an explicit <strong>latent function</strong> (represented as <em>Python</em> code) that explains the observed examples. This involves <strong>synthesizing programs</strong> that fit the training examples and then using them to make predictions on new inputs.</p>
+<p>Transduction is just about <strong>directly predicting outputs</strong> for new test inputs by leveraging neural networks trained on many examples.</p>
+<p>The authors demonstrate that induction and transduction are highly complementary: while induction is better for tasks requiring precise computation and symbolic composition, transduction excels in handling perceptual and fuzzier tasks. Importantly, these paradigms are <strong>combined in an ensemble</strong>, where induction is attempted first, and transduction serves as a fallback if no consistent function is found.</p>
+<h2 class="heading" id="2-synthetic-data-generation-pipeline">
+  2 Synthetic Data Generation Pipeline
+  <a class="anchor" href="#2-synthetic-data-generation-pipeline">#</a>
+</h2>
+<p>A key innovation of the paper is the pipeline for generating a large synthetic dataset. It begins with a set of 100-160 human-written <em>seed programs</em> that solve ARC tasks. Each seed consists of:</p>
+<ol>
+<li>A natural language description of the task.</li>
+<li>A Python function (<code>transform_grid</code>) that implements the transformation.</li>
+<li>An <code>input_generator</code> function to produce new example inputs.</li>
+</ol>
+<p>To scale up, the authors use <em>Retrieval Augmented Generation</em> (RAG) to <strong>remix and mutate these seeds</strong>, creating thousands of synthetic <em>ARC-style</em> problems. This synthetic data generation is crucial for <em>fine-tuning</em> the neural models, providing a massive dataset beyond the original.</p>
+<h2 class="heading" id="3-neural-models-and-training">
+  3 Neural Models and Training
+  <a class="anchor" href="#3-neural-models-and-training">#</a>
+</h2>
+<p>The models used are based on <em>Llama3.1-8B-instruct</em>, which is particularly well-suited for tasks involving code. Inductive and transductive models share the same architecture and are trained with meta-learning objectives: induction maximizes the likelihood of finding the correct function, while transduction maximizes the likelihood of predicting the correct output.</p>
+<p>The synthetic dataset drives the models&rsquo; training, with evidence showing that increasing synthetic data size leads to improved performance, while simply increasing the number of seeds (human effort) yields diminishing returns.</p>
+<h2 class="heading" id="4-evaluation-and-results">
+  4 Evaluation and Results
+  <a class="anchor" href="#4-evaluation-and-results">#</a>
+</h2>
+<p>Experiments reveal that:</p>
+<ul>
+<li>Induction and transduction models solve different subsets of ARC tasks.</li>
+<li>Performance scales better with more compute (sampling budget for induction) than with more manual data.</li>
+<li>Test-time sampling for induction improves solve rates by exploring many candidate programs and filtering those consistent with training examples.</li>
+</ul>
+<p>The final ensemble system, called BARC, achieves 56.75% accuracy on ARC’s validation set—comparable to average human performance and the best open-source result at the time. The approach outperforms purely transductive or inductive methods, illustrating the value of combining both.</p>
+<h2 class="heading" id="5-broader-implications-and-relation-to-agi">
+  5 Broader Implications and Relation to AGI
+  <a class="anchor" href="#5-broader-implications-and-relation-to-agi">#</a>
+</h2>
+<p>The work positions itself within the debate on general intelligence (AGI) by showcasing how combining symbolic (induction) and subsymbolic (transduction) reasoning can solve complex, few-shot learning tasks. This dual-process strategy is analogous to human cognitive processes and suggests pathways for extending such hybrid reasoning to other domains like web scraping, robotic planning, and scientific modeling.</p>
+<h2 class="heading" id="6-implementation-details-and-scaling">
+  6 Implementation Details and Scaling
+  <a class="anchor" href="#6-implementation-details-and-scaling">#</a>
+</h2>
+<p>The authors highlight that while they rely on synthetic data, the core &ldquo;manual&rdquo; data—human-written seeds—remains modest, suggesting a sample-efficient methodology. They acknowledge that the approach does not learn new concepts autonomously from scratch but rather amplifies human-encoded knowledge through LLM remixing and fine-tuning.</p>
+<p>The final models do not incorporate test-time training for induction, focusing on sampling diversity instead, while transduction models do use test-time training and data augmentation to further improve accuracy.</p>
+<h2 class="heading" id="7-conclusion">
+  7 Conclusion
+  <a class="anchor" href="#7-conclusion">#</a>
+</h2>
+<p>The paper’s methodology effectively bridges neural and symbolic approaches to abstract reasoning, demonstrating strong performance and laying the groundwork for future research into hybrid, flexible reasoning systems. By showing that induction and transduction are not only complementary but also robust to changes in model initialization and training data, it underscores the potential of combining explicit program synthesis with direct prediction in AI systems.</p>
+
+    </div>
+  </article>
+
+  
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flexnowrap">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/thss/papers/cho19/">
+                        Cho19 - On the Measure of Intelligence
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+  </footer>
+
+  
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+  
+</body>
+
+<script src="/thss/js/theme-switch.js"></script>
+<script defer src="/thss/js/copy-code.js"></script>
+</html>

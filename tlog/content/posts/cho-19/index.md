@@ -1,15 +1,16 @@
 +++
 title = "Cho19 - on the measure of intelligence"
-date = '2025-05-14'
-toc = true
+date = "2025-01-30"
 math = true
-tags = ["Cho19", "intelligence", "ARC-AGI"]
 hideBackToTop = true
-pdf = "https://arxiv.org/pdf/1901.11150.pdf"
 draft = false
-+++
 
----
+[cover]
+image = "cover.jpeg"
+alt = "intro"
+relative = true
+hidden = false
++++
 
 ## overview
 
@@ -49,7 +50,7 @@ the two components map to the main views of the human mind's nature:
 - one sees the mind as a **static assembly** of special-purpose mechanisms developed through evolution to handle **specific tasks** crucial for survival.
 - the other one sees the mind is a **flexible** blank slate (*Tabula Rasa*) capable of turning experience into knowledge and skills.
 
-![perspectives](/images/perspectives.png#small "Two perspectives")
+![perspectives](/perspectives.png#small "Two perspectives")
 
 he analyzes these perspectives before formulating his own definition.
 
@@ -61,7 +62,7 @@ to the AI community, this view served as a basis for their definition of intelli
 
 it then became popular to believe that the *problem of intelligence* would be solved if we could better encode human skills into formal rules and knowledge into databases. this resulted in **evaluation protocols based on performance at specific tasks**.
 
-![evolution](/images/evolution.jpg "The evolutionary perspective")
+![evolution](/evolution.jpg "The evolutionary perspective")
 
 as pointed out by *Hernández-Orallo (2017)*, this view resulted in a paradox:
 
@@ -79,7 +80,7 @@ although **this idea of generality through learning was at the core of AI** at f
 
 we see the world through the lens of the tools we are most familiar with.
 
-![blank slate](/images/tabula-rasa.jpg "The skill acquisition perspective")
+![blank slate](/tabula-rasa.jpg "The skill acquisition perspective")
 
 today, it has become obvious that **both perspectives**, whether a collection of special-purpose programs or a general-purpose Tabula Rasa, **are incorrect**.
 
@@ -109,7 +110,7 @@ for *humans*, excelling at one specific task is considered proof of intelligence
 
 for *machines* **this is not the case**. so the problem comes from confusing the **intelligence process** (the ability to learn many skills) and the **artifact produced** by this process (good results on particular tasks using those skills), given that in humans they are **intertwined**. for machines being good at one task is just that: being good at one task.
 
-![just-that](/images/just-that.png#small "Just that")
+![just-that](/just-that.png#small "Just that")
 
 the **problem** then has not been measuring AI systems by their performance on specific tasks. Rather, the issue has been **interpreting these results as proof of success** towards developing adaptable and autonomous human-like systems.
 
@@ -131,7 +132,7 @@ additionally, he defines degrees of generalization:
 - *broad generalization* or **flexibility**: Ability of a system to handle a broad range of tasks and environments **without further human intervention** (developer-aware generalization). Simplified: *adaptation to **unknown unknowns across diverse related tasks***. Even the most advanced AI systems from today do not belong to this category.
 - *extreme generalization* or **generality**: Ability of open-ended systems to handle entirely new **tasks that only share abstract commonalities** with previously encountered situations, applicable to any task and domain within a wide scope. simplified: *adaptation to **unknown unknowns across an unknown range of tasks** and domains*.
 
-![generalization](/images/generalization.jpg "The spectrum of generalization")
+![generalization](/generalization.jpg "The spectrum of generalization")
         
 Chollet refers, in particular, to "*human-centric extreme generalization*" as *generality*, because **humans are the only known systems** that can **display both system-centric** (quick adaptability to  novel situations from little experience) **and developer-aware generalization** (ability of contemporary humans to handle situations that previous ones in history have never encountered).
 

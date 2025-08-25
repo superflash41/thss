@@ -1,0 +1,77 @@
+baseURL = 'https://superflash41.github.io/thss/'
+publishDir = "../docs"
+languageCode = 'en-us'
+title = "tlog"
+theme = "PaperMod"
+
+# enable syntax highlighting
+pygmentsUseClasses = true
+
+[params]
+env = "production"
+title = "tlog"
+# description = "Summaries and insights from the papers I'm reading."
+author = "Saymon Nicho"
+
+# theme mode
+defaultTheme = "dark"
+
+ShowReadingTime = false
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = false
+ShowCodeCopyButtons = true
+ShowWordCount = false
+UseHugoToc = true
+ShowToc = true
+TocsOpen = true
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/saymon-nicho/"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://www.github.com/superflash41"
+
+[[params.socialIcons]]
+name = "x"
+url = "https://x.com/isaneuron"
+
+[[params.socialIcons]]
+name = "email"
+url = "mailto:saymon.nicho@.pucp.edu.pe"
+
+# profile mode
+[params.profileMode]
+enabled = false
+
+[params.homeInfoParams]
+Title = "📚 thesis research blog"
+Content = """
+collection of notes and summaries from papers I reviewed as
+part of a systematic literature review for my undergraduate thesis in computer science.
+
+"""
+
+# for search
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+
+
+[menu]
+[[menu.main]]
+name = "home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "posts"
+url = "/posts/"
+weight = 2
+
+[[menu.main]]
+name = "search"
+url = "/search/"
+weight = 3
